@@ -34,11 +34,11 @@ app.get('/webhooks/answer', (req, res) => {
         }
     ]
 
-    res.status(200).json(nccoResponse)
+    res.status(200).json(nccoResponse);
 });
 
 app.post('/webhooks/events', (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
     res.sendStatus(200);
 });
 
@@ -57,7 +57,7 @@ app.ws('/socket', async (ws, req) => {
     1. Get the samples of the audio file (first channel).
     2. Break the samples into the size expected by the Voice API
     */
-    const samples = chunkArray(wav.getSamples()[0], 320)
+    const samples = chunkArray(wav.getSamples()[0], 320);
     for (var index = 0; index < samples.length; ++index) {
         // Send a buffer over the web socket
         ws.send(Uint16Array.from(samples[index]).buffer);
@@ -71,4 +71,4 @@ function chunkArray(array, chunkSize) {
     return chunkedArray;
 }
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(port, () => console.log(`Listening on port ${port}`));
