@@ -1,8 +1,8 @@
-# Voice API Play Audio Into a Web Socket
+# Voice API Play Audio Into a WebSocket
 
 <img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
 
-This project shows you how to play audio into a Voice API call via a websocket. You can learn more about it in the [Tutorial](LINKHERE).
+This project shows you how to play audio into a Voice API call via a WebSocket. You can learn more about it in the [Tutorial](LINKHERE).
 
 ## Welcome to Vonage
 
