@@ -43,11 +43,23 @@ app.post('/webhooks/events', (req, res) => {
 });
 
 app.ws('/socket', async (ws, req) => {
+    // Load the sound file
     const wav = new WaveFile(fs.readFileSync("./sound.wav"));
+
+    /* 
+    Convert file sample rate and bit depth
+    to the expected values by the Voice API.
+    */
     wav.toSampleRate(16000);
     wav.toBitDepth("16");
+
+    /* 
+    1. Get the samples of the audio file (first channel).
+    2. Break the samples into the size expected by the Voice API
+    */
     const samples = chunkArray(wav.getSamples()[0], 320)
     for (var index = 0; index < samples.length; ++index) {
+        // Send a buffer over the web socket
         ws.send(Uint16Array.from(samples[index]).buffer);
     }
 });
