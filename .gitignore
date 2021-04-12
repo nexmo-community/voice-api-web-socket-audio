@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
 .nexmo-app
+.DS_Store
 
 ### Node ###
 # Logs
